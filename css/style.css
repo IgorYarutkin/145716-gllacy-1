@@ -692,65 +692,29 @@ body > input[type="radio"] {
   display: inline-block;
   verical-align: baseline;
 }
-.input-wrapper label {
-  position: absolute;
-  top: 9px;
-  left: 14px;
-  padding: 0 2px;
-  font-size: 16px;
-  line-height: 24px;
-  color: #9b9b9b;
-  z-index: 2;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms ease;
-  transition: -webkit-transform 200ms ease;
-  transition: transform 200ms ease;
-  transition: transform 200ms ease, -webkit-transform 200ms ease;
-  -webkit-transform: translateY(-32px);
-          transform: translateY(-32px);
-}
-.input-wrapper label:before {
-  content: attr(data-first);
-  white-space: nowrap;
-}
-.mailing-list-form input {
+.field.field-email-form {
   position: relative;
   margin-right: 8px;
-  margin-left: 6px;
-  width: 364px;
-  height: 40px;
+  margin-left: 8px;
+  padding-left: 14px;
+  width: 366px;
+  height: 42px;
   font-size: 16px;
   line-height: 24px;
   color: #353535;
   border: 1px solid rgba(178, 178, 178, 0.52);
   border-radius: 5px;
 }
-.mailing-list-form input:invalid + label {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+.field-email-form + .placeholder {
+  top: 8px;
+  left: 21px;
+  font-size: 16px;
 }
-.mailing-list-form input:focus + label {
-  -webkit-transform: translateY(-32px);
-          transform: translateY(-32px);
-}
-.mailing-list-form input:focus + label:before {
-  content: attr(data-second);
-  border-color: #2b96f1;
-  color: #2b96f1;
-}
-.mailing-list-form input:required:invalid + label[data-first][data-second]:before {
-  content: attr(data-first);
-}
-.mailing-list-form input:required:focus + label[data-first][data-second]:before {
-  content: attr(data-second);
-}
-.mailing-list-form input:required + label[data-second]:before {
-  content: attr(data-second);
-}
-.mailing-list-form input:hover {
-  width: 356px;
-  height: 40px;
-  border: 2px solid rgba(154, 154, 154, 0.52);
+.field.field-email-form:required:valid + .placeholder {
+  font-size: 16px;
+  color: #999999;
+  -webkit-transform: translateY(-31px);
+          transform: translateY(-31px);
 }
 .map {
   position: relative;
@@ -1408,8 +1372,8 @@ body.page-catalog {
           transform: translateY(-28px);
 }
 .field:required:valid + .placeholder {
-  font-size: 11px;
-  color: #5b9ddf;
+  font-size: 16px;
+  color: #999999;
   -webkit-transform: translateY(-28px);
           transform: translateY(-28px);
 }
