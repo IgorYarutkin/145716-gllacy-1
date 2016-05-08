@@ -105,7 +105,7 @@ body > input[type="radio"] {
   left: -4px;
   margin: 0;
   padding: 0;
-  width: 145px;
+  width: 142px;
   background-color: #f8f7f4;
   border-radius: 5px;
   z-index: 10;
@@ -117,7 +117,7 @@ body > input[type="radio"] {
 .sub-menu-item {
   margin: 0;
   padding: 0;
-  line-height: 18px;
+  line-height: 13px;
   font-size: 14px;
 }
 .sub-menu a {
@@ -1383,23 +1383,24 @@ body.page-catalog {
 .search-wrapper {
   display: none;
   position: absolute;
-  top: 52px;
-  right: 8px;
+  top: 50px;
+  right: 11px;
   padding: 15px;
-  padding-top: 14px;
-  width: 242px;
-  height: 39px;
+  padding-top: 20px;
+  width: 311px;
+  height: 49px;
   background-color: #f8f7f4;
   border-radius: 5px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
   z-index: 10;
 }
 .field-search {
-  width: 241px;
-  height: 40px;
+  width: 311px;
+  height: 44px;
 }
 .field-search + .placeholder {
-  top: 20px;
+  top: 28px;
+  left: 30px;
 }
 
 /* Модальное окно входа */
@@ -1407,10 +1408,9 @@ body.page-catalog {
 .modal-login .login-wrapper {
   display: none;
   position: absolute;
-  top: 52px;
-  right: 7px;
-  padding: 20px 15px 14px;
-  /*padding-top: 20px;*/
+  top: 50px;
+  right: 4px;
+  padding: 19px 17px 21px 18px;
   background: #fefefe;
   border-radius: 5px;
   box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
@@ -1418,25 +1418,27 @@ body.page-catalog {
   cursor: pointer;
 }
 .modal-login .field {
-  width: 240px;
-  height: 39px;
+  width: 241px;
+  height: 44px;
 }
 .field-email {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 .field-email + .placeholder {
-  top: 25px;
+  left: 32px;
+  top: 27px;
 }
 .field-password {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 .field-password + .placeholder {
-  top: 75px;
+  left: 32px;
+  top: 91px;
 }
 .login-btn {
   float: left;
-  padding: 5px 29px;
-  font-size: 15px;
+  padding: 10px 24px;
+  font-size: 18px;
   line-height: 25px;
   border: none;
 }
@@ -1447,7 +1449,7 @@ body.page-catalog {
   margin: 0;
   width: 120px;
   font-size: 13px;
-  line-height: 19px;
+  line-height: 21px;
   color: #333333;
 }
 
