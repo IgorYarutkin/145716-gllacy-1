@@ -1016,6 +1016,9 @@ body.page-catalog {
   border-radius: 17px;
   white-space: nowrap;
 }
+.filter-content .filter-item-wrapper {
+  display: inline-block;
+}
 .filter-content label {
   position: relative;
   line-height: 35px;
