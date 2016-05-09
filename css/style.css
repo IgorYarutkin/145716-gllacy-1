@@ -43,6 +43,66 @@ body img {
   padding: 0 27px;
   width: 1146px;
 }
+
+
+/* Общие стили для полей ввода */
+
+.field {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  font-size: 14px;
+  line-height: 25px;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #353535;
+  border: 1px solid #d3d3d2;
+  border-radius: 5px;
+}
+.field:hover {
+  border: 2px solid rgba(154, 154, 154, 0.52);
+}
+.field:focus, .field:hover:focus {
+  border: 2px solid rgba(91, 157, 223, 0.52);
+}
+
+/* Общие стили для меток полей ввода */
+
+.placeholder {
+  position: absolute;
+  top: 23px;
+  left: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #999999;
+  z-index: 2;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 200ms ease;
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+.placeholder:before {
+  content: attr(data-placeholder);
+  white-space: nowrap;
+}
+.field:focus + .placeholder {
+  font-size: 11px;
+  color: #5b9ddf;
+  -webkit-transform: translateY(-28px);
+          transform: translateY(-28px);
+}
+.field:required:valid + .placeholder {
+  font-size: 14px;
+  color: #999999;
+  -webkit-transform: translateY(-28px);
+          transform: translateY(-28px);
+}
+
+/* Главная страница */
+
 .main-header {
   position: relative;
 }
@@ -122,7 +182,7 @@ body img {
 .sub-menu-item {
   margin: 0;
   padding: 0;
-  line-height: 13px;
+  line-height: 14px;
   font-size: 14px;
 }
 .sub-menu a {
@@ -678,7 +738,7 @@ body img {
 .mailing-list p {
   margin: 0;
   margin-top: 14px;
-  margin-bottom: 37px;
+  margin-bottom: 36px;
   padding: 0;
   padding-left: 7px;
   line-height: 22px;
@@ -687,8 +747,8 @@ body img {
   color: #5a5a5a;
 }
 .small-btn, .feedback-btn {
-  padding: 8px 22px 12px 20px;
-  line-height: 24px;
+  padding: 4px 22px 13px 20px;
+  line-height: 26px;
   font-size: 17px;
   border: none;
 }
@@ -700,13 +760,13 @@ body img {
   display: inline-block;
   verical-align: baseline;
 }
-.field.field-email-form {
+.field-email-form {
   position: relative;
   margin-right: 8px;
-  margin-left: 8px;
+  margin-left: 5px;
   padding-left: 14px;
-  width: 366px;
-  height: 42px;
+  width: 368px;
+  height: 44px;
   font-size: 16px;
   line-height: 24px;
   color: #353535;
@@ -714,8 +774,8 @@ body img {
   border-radius: 5px;
 }
 .field-email-form + .placeholder {
-  top: 8px;
-  left: 21px;
+  top: 9px;
+  left: 20px;
   font-size: 16px;
 }
 .field.field-email-form:required:valid + .placeholder {
@@ -781,7 +841,7 @@ margin-top: 4px;
 }
 
 .map-contacts p:last-of-type {
-  margin-bottom: 25px;
+  margin-bottom: 26px;
 }
 .feedback-btn {
   padding: 9px 35px 12px 32px;
@@ -1063,15 +1123,15 @@ body.page-catalog {
   right: 15px;
   width: 0;
   height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 10px solid #000;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #000;
   cursor: pointer;
 }
 .select-container select {
   position: relative;
   padding-left: 11px;
-  width: 160%;
+  width: 130%;
   height: 35px;
   font-size: 16px;
   line-height: 35px;
@@ -1327,67 +1387,6 @@ body.page-catalog {
 /*==============================================================================
              ВСПЛЫВАЮЩИЕ ОКНА
 ==============================================================================*/
-
-
-/* Общие стили для полей ввода */
-
-.field {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  padding-left: 10px;
-  font-size: 14px;
-  line-height: 25px;
-  font-family: "Roboto", Arial, sans-serif;
-  color: #353535;
-  border: 1px solid #d3d3d2;
-  border-radius: 5px;
-}
-.field:hover {
-  border: 2px solid rgba(154, 154, 154, 0.52);
-}
-.field[type="text"]:required:invalid {
-  border: 1px solid #d3d3d2;
-  box-shadow: none;
-}
-.field:focus, .field:hover:focus {
-  border: 2px solid rgba(91, 157, 223, 0.52);
-}
-
-/* Общие стили для меток полей ввода */
-
-.placeholder {
-  position: absolute;
-  top: 23px;
-  left: 24px;
-  font-size: 14px;
-  line-height: 24px;
-  color: #999999;
-  z-index: 2;
-  pointer-events: none;
-  -webkit-transition: -webkit-transform 200ms ease;
-  transition: -webkit-transform 200ms ease;
-  transition: transform 200ms ease;
-  transition: transform 200ms ease, -webkit-transform 200ms ease;
-  -webkit-transform: translateY(0px);
-          transform: translateY(0px);
-}
-.placeholder:before {
-  content: attr(data-placeholder);
-  white-space: nowrap;
-}
-.field:focus + .placeholder {
-  font-size: 11px;
-  color: #5b9ddf;
-  -webkit-transform: translateY(-28px);
-          transform: translateY(-28px);
-}
-.field:required:valid + .placeholder {
-  font-size: 14px;
-  color: #999999;
-  -webkit-transform: translateY(-28px);
-          transform: translateY(-28px);
-}
 
 /* Модальное окно поиска */
 
