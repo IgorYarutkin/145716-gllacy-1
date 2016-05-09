@@ -8,6 +8,11 @@
 body > input[type="radio"] {
   display: none;
 }
+body img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 .clearfix::after {
   content: "";
   display: table;
@@ -163,7 +168,7 @@ body > input[type="radio"] {
   float: right;
   font-size: 0;
 }
-.user-block .modal-search, .user-block .modal-login, .user-block .cart {
+.user-block .modal-search, .user-block .modal-login, .user-block .modal-cart {
   display: inline-block;
   position: relative;
   margin: 0;
@@ -238,17 +243,17 @@ body > input[type="radio"] {
 .login span.title {
   padding-left: 45px;
 }
-.user-block .cart {
+.user-block .modal-cart {  //
   /*display: block;*/
   position: relative;
   margin-right: 0;
   padding-right: 0;
   text-decoration: none;
 }
-.user-block .cart .full-cart {
+.user-block .modal-cart.full-cart {
   padding-right: 0;
 }
-.cart::before {
+.modal-cart::before {
   content: "";
   position: absolute;
   top: 21px;
@@ -258,23 +263,20 @@ body > input[type="radio"] {
   background-image: url("../img/de-cart.svg");
   background-repeat: no-repeat;
 }
-.cart:hover::before {
+.modal-cart:hover::before {
   background-image: url("../img/de-cart-black.svg");
   background-repeat: no-repeat;
 }
 
-.full-cart:hover + .modal-cart {
+.full-cart:hover .cart-wrapper {
   display: block;
 }
 
-.cart:hover span.title {
+.modal-cart:hover span.title {
   color: #000;
   background: #fff;
 }
 
-/*.cart:hover {
-  text-decoration: underline;
-}*/
 .full-cart span.title {
   /*  .full-cart - класс, который добавляетя при наличии отложенных товаров*/
   color: #000;
@@ -305,10 +307,10 @@ body > input[type="radio"] {
           transform: rotate(180deg);
   z-index: 3;
 }
-.cart span.title {
+.modal-cart span.title {
   padding-right: 34px;
 }
-.cart .title.title-fullcart {
+.modal-cart .title.title-fullcart {
   padding-right: 18px;
 }
 .info-briefly {
@@ -1372,7 +1374,7 @@ body.page-catalog {
           transform: translateY(-28px);
 }
 .field:required:valid + .placeholder {
-  font-size: 16px;
+  font-size: 14px;
   color: #999999;
   -webkit-transform: translateY(-28px);
           transform: translateY(-28px);
@@ -1599,7 +1601,7 @@ body.page-catalog {
 
 /* Модальное окно корзины заказов */
 
-.modal-cart {
+.cart-wrapper {
   display: none;
   position: absolute;
   top: 51px;

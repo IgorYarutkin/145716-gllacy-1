@@ -50,7 +50,8 @@
           </ul>
         </nav>
         <div class="user-block">
-          <form class="modal-search" action="https://echo.htmlacademy.ru" method="post">
+          <div class="modal-search">
+          <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
             <div class="search-field">Поиск</div>
             <div class="search-wrapper">
               <div class="input-search">
@@ -59,20 +60,23 @@
               </div>
             </div>
           </form>
-          <form class="modal-login" action="https://echo.htmlacademy.ru" method="post">
+          </div>
+          <div class="modal-login">
             <div class="login"><span class="title">Вход</span></div>
             <div class="login-wrapper clearfix">
-              <input class="field field-email" type="email" name="e-mail" required>
+              <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+              <input class="field field-email" type="text" name="e-mail" required>
               <label class="placeholder" data-placeholder="Электронная почта"></label>
               <input class="field field-password" type="password" name="password" required>
               <label class="placeholder" data-placeholder="Пароль"></label>
               <button class="red-btn login-btn" type="submit">Войти</button>
               <a href="#" class="forget"><span>Забыли пароль?</span></a>
               <a href="#" class="registration"><span>Новая регистрация</span></a>
-            </div>
           </form>
-          <a href="#" class="cart"><span class="title">Пусто</span></a>
-            <div class="modal-cart">
+          </div>
+        </div>
+          <div class="modal-cart"><span class="title">Пусто</span>
+            <div class="cart-wrapper">
               <table class="cart-table">
                 <tr class="row01">
                   <td class="column01 cross"></td>
@@ -96,6 +100,7 @@
               </table>
               <a class="red-btn order-btn" href="#">Оформить заказ</a>
             </div>
+          </div>
 
           <div class="info-briefly">
             <span>с&nbsp;10&nbsp;до&nbsp;20, ежедневно</span>
