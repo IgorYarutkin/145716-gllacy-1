@@ -655,15 +655,21 @@ body img {
   font-size: 16px;
   color: #5a5a5a;
 }
-.blog p {
+.blog .link-wrapper {
   margin: 0;
-  margin-bottom: 64px;
+  margin-bottom: 63px;
   padding: 0;
   width: 300px;
+}
+.blog a {
   line-height: 29px;
   font-size: 24px;
   color: #353535;
   text-decoration: underline;
+  border-bottom: none;
+}
+.blog a:hover {
+  border-bottom: none;
 }
 .mailing-list {
   float: right;
