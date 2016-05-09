@@ -177,7 +177,7 @@ body img {
   vertical-align: top;
   cursor: pointer;
 }
-.user-block span.title {
+.user-block .title {
   padding: 7px 15px 6px 44px;
   line-height: 30px;
   font-size: 14px;
@@ -216,13 +216,10 @@ body img {
 .modal-search:hover .search-wrapper {
   display: block;
 }
-.user-block .login {
-
-}
 .modal-login:hover .login-wrapper {
   display: block;
 }
-.modal-login:hover span.title {
+.modal-login:hover .title {
   color: #000;
   background: #fff;
 }
@@ -240,8 +237,11 @@ body img {
   background-image: url("../img/de-login-black.svg");
   background-repeat: no-repeat;
 }
-.login span.title {
-  padding-left: 45px;
+.login.title {
+  padding-left: 46px;
+  padding-top: 4px;
+  padding-right:  16px;
+  line-height: 19px;
 }
 .user-block .modal-cart {  //
   /*display: block;*/
@@ -272,12 +272,12 @@ body img {
   display: block;
 }
 
-.modal-cart:hover span.title {
+.modal-cart:hover .title {
   color: #000;
   background: #fff;
 }
 
-.full-cart span.title {
+.full-cart .title {
   /*  .full-cart - класс, который добавляетя при наличии отложенных товаров*/
   color: #000;
   background: #fff;
@@ -307,10 +307,10 @@ body img {
           transform: rotate(180deg);
   z-index: 3;
 }
-.modal-cart span.title {
+.modal-cart .title {
   padding-right: 34px;
 }
-.modal-cart .title.title-fullcart {
+.modal-cart .title-fullcart {
   padding-right: 18px;
 }
 .info-briefly {
@@ -535,26 +535,23 @@ body img {
   left: -1px;
 }
 
-
-.item a {
-  display: block;
+.item .link-wrapper {
   margin-top: 12px;
   margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
+.link-wrapper a {
   line-height: 22px;
   font-size: 16px;
   color: #fff;
-  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   text-decoration: none;
 }
-
-.item span {
-  color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-.item:hover span {
+.item:hover a {
   border-bottom: none;
 }
-.item span:hover {
+.link-wrapper a:hover {
   color: rgba(255, 188, 158, 1);
   border-bottom: 1px solid rgba(255, 188, 158, 0.3);
 }
