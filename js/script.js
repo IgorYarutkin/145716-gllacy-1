@@ -1,56 +1,93 @@
+(function() {
+var btnFeedbackOpen = document.querySelector(".feedback-btn");
+var popupFeedback = document.querySelector(".modal-feedback");
+var btnFeedbackClose = document.querySelector(".feedback-close-btn");
+var overlay = document.querySelector(".modal-overlay");
+var nameField = document.querySelector('.field-your-name');
+var emailField = document.querySelector('.field-your-email');
+var commentsField = document.querySelector('.field-comments');
+var btnSubmit = document.querySelector('.feedback-submit-btn');
 
-  var btnFeedbackSubmit = document.querySelector(".feedback-btn");
-  var popupFeedback = document.querySelector(".modal-feedback");
-  var btnFeedbackClose = document.querySelector(".feedback-close-btn");
-  var overlay = document.querySelector(".modal-overlay");
+var onBtnClose = function(evt) {
+  evt.preventDefault();
+  popupClose();
+};
+var onEscClose = function(evt) {
+  if (evt.keyCode === 27) {
+    popupClose();
+  }
+};
 
+var popupClose = function() {
+  btnFeedbackClose.removeEventListener("click", onBtnClose);
+  window.removeEventListener("keydown", onEscClose);
+  btnSubmit.removeEventListener("click", onBtnSubmit);
+  popupFeedback.classList.remove("modal-error");
+  popupFeedback.classList.remove("on");
+  overlay.classList.remove("on");
+};
 
-
-  btnFeedbackSubmit.addEventListener("click", function(event) {
-    event.preventDefault();
-    popupFeedback.classList.add("on");
-    overlay.classList.add("on");
-    comments.focus();
-    });
-
-  btnFeedbackClose.addEventListener("click", function(event) {
-    event.preventDefault();
-    popupFeedback.classList.remove("on");
-    overlay.classList.remove("on");
-  });
-
-  window.addEventListener("keydown", function(event) {
-    if (event.keyCode === 27) {
-      if (popupFeedback.classList.contains("on")) {
-        popupFeedback.classList.remove("on");
-      }
-      if (overlay.classList.contains("on")) {
-        overlay.classList.remove("on");
-      }
+var onBtnSubmit = function(evt) {
+  if (!nameField.value || !emailField.value) {
+    evt.preventDefault();
+    popupFeedback.classList.remove("modal-error");
+    popupFeedback.offsetWidth = popupFeedback.offsetWidth;
+    popupFeedback.classList.add("modal-error");
+    if (!nameField.value) {
+      nameField.focus();
+    } else {
+      emailField.focus();
     }
-  });
+  } else {
+    localStorage.setItem("userName", nameField.value);
+    localStorage.setItem("userEmail", emailField.value);
+  }
+};
+
+var popupOpen = function() {
+  popupFeedback.classList.add("on");
+  overlay.classList.add("on");
+  btnFeedbackClose.addEventListener("click", onBtnClose);
+  btnSubmit.addEventListener("click", onBtnSubmit);
+  window.addEventListener("keydown", onEscClose);
+  nameField.value = localStorage.getItem("userName") || "";
+  emailField.value = localStorage.getItem("userEmail") || "";
+  if(nameField.value === "") {
+    nameField.focus();
+  } else if (emailField.value === "") {
+    emailField.focus();
+  } else {
+    commentsField.focus();
+  }
+};
+
+btnFeedbackOpen.addEventListener("click", popupOpen);
+
+})();
 
 // Подключение карты
 
 ymaps.ready(init);
 var myMap;
-  function init() {
-      myMap = new ymaps.Map("yandex-map", {
-        center: [59.938694, 30.324896],
-        zoom: [16],
-        controls: []
-        }),
+
+function init() {
+  myMap = new ymaps.Map("yandex-map", {
+      center: [59.938694, 30.324896],
+      zoom: [16],
+      controls: []
+    }),
     myMap.behaviors.disable("scrollZoom");
-    myMap.controls.add("zoomControl");
+  myMap.controls.add("zoomControl");
 
-    myPlacemark = new ymaps.Placemark([59.938882, 30.32318], {
-      hintContent: "Офф-лайн магазин мороженого Глейси",
-      balloonContent: ""
-    }, {
-      iconLayout: "default#image",
-      iconImageHref: "img/de-marker.png",
-      iconImageSize: [218, 142],
-      iconImageOffset: [-45, -120]
-    });
+  myPlacemark = new ymaps.Placemark([59.938882, 30.32318], {
+    hintContent: "Офф-лайн магазин мороженого Глейси",
+    balloonContent: ""
+  }, {
+    iconLayout: "default#image",
+    iconImageHref: "img/de-marker.png",
+    iconImageSize: [218, 142],
+    iconImageOffset: [-45, -120]
+  });
 
-    myMap.geoObjects.add(myPlacemark);}
+  myMap.geoObjects.add(myPlacemark);
+}
