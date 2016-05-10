@@ -747,7 +747,7 @@ body img {
   color: #5a5a5a;
 }
 .small-btn, .feedback-btn {
-  padding: 4px 22px 13px 20px;
+  padding: 6px 22px 11px 20px;
   line-height: 26px;
   font-size: 17px;
   border: none;
@@ -1472,45 +1472,50 @@ body.page-catalog {
   left: 50%;
   margin-left: -237px;
   padding: 25px;
-  width: 425px;
+  width: 428px;
   background: #f8f7f4;
   border-radius: 10px;
   z-index: 20;
   -webkit-animation: bounce 0.6s;
           animation: bounce 0.6s;
+  padding-top: 12px;
+  padding-bottom: 28px;
 }
 .modal-feedback span {
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #343434;
   font-size: 24px;
   line-height: 31px;
 }
 .modal-feedback .field {
   display: block;
-  margin-bottom: 20px;
-  width: 265px;
-  height: 42px;
+  margin-bottom: 23px;
+  width: 266px;
+  height: 43px;
+}
+.modal-feedback .placeholder {
+  font-size: 16px;
 }
 .modal-feedback .field-comments {
-  width: 425px;
+  width: 428px;
   height: 150px;
 }
 .field-your-name + .placeholder {
-  top: 90px;
-  left: 44px;
+  top: 71px;
+  left: 39px;
 }
 .field-your-email + .placeholder {
-  top: 151px;
-  left: 44px;
+  top: 135px;
+  left: 39px;
 }
 .field-comments + .placeholder {
-  top: 213px;
-  left: 44px;
+  top: 198px;
+  left: 39px;
 }
 .feedback-submit-btn {
   float: right;
-  padding: 10px 15px;
+  padding: 8px 26px 12px 24px;
   font-size: 17px;
   line-height: 24px;
   border: none;
@@ -1726,4 +1731,14 @@ body.page-catalog {
 .cross::after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+/* Убираем красную рамку неправильно заполненных полей type="text"
+* (появляется когда сначала текст вписываешь, а потом удаляешь его)
+*/
+.field[type="text"]:required:invalid {
+  border: 1px solid #d3d3d2;
+  box-shadow: none;
+}
+.field[type="text"]:hover:required:invalid {
+  border: 2px solid rgba(154, 154, 154, 0.52);
 }
