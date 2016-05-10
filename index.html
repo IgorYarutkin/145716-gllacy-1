@@ -53,7 +53,7 @@
           <div class="modal-search">
             <div class="search-field">Поиск</div>
             <div class="search-wrapper">
-              <form class="search-form" action="https://echo.htmlacademy.ru" method="post">
+              <form action="https://echo.htmlacademy.ru" method="post">
               <div class="input-search">
                 <input class="field field-search" type="text" name="search-inquiry" required>
                 <label class="placeholder" data-placeholder="Что ищем?"></label>
@@ -64,7 +64,7 @@
           <div class="modal-login">
             <div class="login title">Вход</div>
             <div class="login-wrapper clearfix">
-              <form class="login-form" action="https://echo.htmlacademy.ru" method="post">
+              <form action="https://echo.htmlacademy.ru" method="post">
               <input class="field field-email" type="text" name="e-mail" required>
               <label class="placeholder" data-placeholder="Электронная почта"></label>
               <input class="field field-password" type="password" name="password" required>
@@ -224,13 +224,15 @@
             <p>
               Подпишитесь на&nbsp;нашу сладкую рассылку и&nbsp;будете всегда в&nbsp;курсе всего самого вкусного, что у&nbsp;нас происходит. Обещаем не&nbsp;спамить и&nbsp;не&nbsp;слать всякой не&nbsp;нужной ерунды. Честно =)
             </p>
-            <form class="mailing-list-form" action="https://echo.htmlacademy.ru" method="post">
+            <div class="mailing-list-form">
+            <form action="https://echo.htmlacademy.ru" method="post">
               <div class="input-wrapper">
                 <input class="field field-email-form" type="text" name="email" required>
                 <label class="placeholder" data-placeholder="Электронная почта"></label>
               </div>
               <button class="red-btn small-btn" type="submit">Отправить</button>
             </form>
+          </div>
           </div>
         </div>
       </div>
@@ -272,7 +274,8 @@
       </section>
     </footer>
 
-    <form class="modal-feedback" action="https://echo.htmlacademy.ru" method="post">
+    <div class="modal-feedback">
+    <form action="https://echo.htmlacademy.ru" method="post">
       <span>Мы обязательно вам ответим!</span>
       <input class="field field-your-name" type="text" name="your-name" required>
       <label class="placeholder" data-placeholder="Как вас зовут?"></label>
@@ -283,6 +286,7 @@
       <button class="red-btn feedback-submit-btn" type="submit">Отправить</button>
       <button class="feedback-close-btn" type="button">Закрыть</button>
     </form>
+  </div>
     <div class="modal-overlay"></div>
   </div>
 
