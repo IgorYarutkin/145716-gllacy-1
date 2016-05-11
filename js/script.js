@@ -44,7 +44,8 @@ var onBtnSubmit = function(evt) {
   }
 };
 
-var popupOpen = function() {
+var popupOpen = function(evt) {
+  evt.preventDefault();
   popupFeedback.classList.add("on");
   overlay.classList.add("on");
   btnFeedbackClose.addEventListener("click", onBtnClose);
